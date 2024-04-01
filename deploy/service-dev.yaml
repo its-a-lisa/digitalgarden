@@ -7,6 +7,6 @@ spec:
     app: digitalgarden-dev
   ports:
   - protocol: TCP
-    port: 3000
+    port: 8080
     targetPort: web
     name: web
