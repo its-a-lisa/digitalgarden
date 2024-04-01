@@ -1,0 +1,24 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: digitalgarden
+  namespace: alyssa
+  annotations:
+    cert-manager.io/cluster-issuer: le-prod
+spec:
+  ingressClassName: nginx
+  tls:
+  - hosts:
+    - notes.its-a-lisa.com
+    secretName: digitalgarden-cert
+  rules:
+  - host: notes.its-a-lisa.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: digitalgarden
+            port:
+              number: 8080
