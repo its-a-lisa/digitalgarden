@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: its-a-lisa-site
+  name: digitalgarden
   namespace: alyssa
   annotations:
     image.openshift.io/triggers: |-
@@ -9,7 +9,7 @@ metadata:
         {
           "from": {
             "kind": "ImageStreamTag",
-            "name": "its-a-lisa-site:latest",
+            "name": "digitalgarden:latest",
             "namespace": "alyssa"
           },
           "fieldPath": "spec.template.spec.containers[?(@.name==\"site\")].image",
@@ -25,15 +25,15 @@ spec:
       maxUnavailable: 50%
   selector:
     matchLabels:
-      app: its-a-lisa-site
+      app: digitalgarden
   template:
     metadata:
       labels:
-        app: its-a-lisa-site
+        app: digitalgarden
     spec:
       containers:
       - name: site
-        image: its-a-lisa-site:latest
+        image: digitalgarden:latest
         imagePullPolicy: IfNotPresent
         ports:
         - name: web

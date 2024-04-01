@@ -1,7 +1,7 @@
 kind: Ingress
 apiVersion: networking.k8s.io/v1
 metadata:
-  name: its-a-lisa-site
+  name: digitalgarden
   namespace: alyssa
   annotations:
     cert-manager.io/cluster-issuer: le-prod
@@ -9,16 +9,16 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - its-a-lisa.com
-    secretName: its-a-lisa-site-cert
+    - notes.its-a-lisa.com
+    secretName: digitalgarden-cert
   rules:
-  - host: its-a-lisa.com
+  - host: notes.its-a-lisa.com
     http:
       paths:
       - path: /
         pathType: Prefix
         backend:
           service:
-            name: its-a-lisa-site
+            name: digitalgarden
             port:
               number: 3000
