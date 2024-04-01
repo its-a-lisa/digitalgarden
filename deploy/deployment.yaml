@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: its-a-lisa-site
+  namespace: alyssa
+  annotations:
+    image.openshift.io/triggers: |-
+      [
+        {
+          "from": {
+            "kind": "ImageStreamTag",
+            "name": "its-a-lisa-site:latest",
+            "namespace": "alyssa"
+          },
+          "fieldPath": "spec.template.spec.containers[?(@.name==\"site\")].image",
+          "paused": false
+        }
+      ]      
+spec:
+  replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 50%
+  selector:
+    matchLabels:
+      app: its-a-lisa-site
+  template:
+    metadata:
+      labels:
+        app: its-a-lisa-site
+    spec:
+      containers:
+      - name: site
+        image: its-a-lisa-site:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: web
+          containerPort: 3000
+          protocol: TCP

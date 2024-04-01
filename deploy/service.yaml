@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: its-a-lisa-site
+spec:
+  selector:
+    app: its-a-lisa-site
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: web
+    name: web
