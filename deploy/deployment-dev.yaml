@@ -12,7 +12,7 @@ metadata:
             "name": "digitalgarden:dev",
             "namespace": "alyssa"
           },
-          "fieldPath": "spec.template.spec.containers[?(@.name==\"site\")].image",
+          "fieldPath": "spec.template.spec.containers[?(@.name==\"_site")].image",
           "paused": false
         }
       ]      
