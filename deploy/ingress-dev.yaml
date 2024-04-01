@@ -21,4 +21,4 @@ spec:
           service:
             name: digitalgarden-dev
             port:
-              number: 3000
+              number: 8080
