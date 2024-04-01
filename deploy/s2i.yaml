@@ -1,7 +1,7 @@
 kind: ImageStream
 apiVersion: image.openshift.io/v1
 metadata:
-  name: nodejs-20
+  name: nodejs-18
   namespace: alyssa
 spec:
   lookupPolicy:
@@ -10,7 +10,7 @@ spec:
     - name: latest
       from:
         kind: DockerImage
-        name: 'quay.io/fedora/nodejs-20:latest'
+        name: 'quay.io/fedora/nodejs-18:latest'
       importPolicy:
         scheduled: true
         importMode: Legacy

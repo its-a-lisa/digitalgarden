@@ -6,7 +6,7 @@ metadata:
   labels:
     app: digitalgarden
     app.openshift.io/runtime: nodejs
-    app.openshift.io/runtime-version: "20"
+    app.openshift.io/runtime-version: "18"
 spec:
   output:
     to:
@@ -20,7 +20,7 @@ spec:
       from:
         kind: ImageStreamTag
         namespace: alyssa
-        name: 'nodejs-20:latest'
+        name: 'nodejs-18:latest'
   source:
     type: Git
     git:
@@ -31,6 +31,6 @@ spec:
         from:
           kind: ImageStreamTag
           namespace: alyssa
-          name: 'nodejs-20:latest'
+          name: 'nodejs-18:latest'
     - type: ConfigChange
   runPolicy: Serial
