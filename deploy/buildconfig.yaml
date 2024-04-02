@@ -15,22 +15,16 @@ spec:
   successfulBuildsHistoryLimit: 5
   failedBuildsHistoryLimit: 5
   strategy:
-    type: Source
-    sourceStrategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: Dockerfile
       from:
         kind: ImageStreamTag
-        namespace: alyssa
-        name: 'nodejs-18:latest'
-  source:
-    type: Git
-    git:
-      uri: 'https://github.com/its-a-lisa/digitalgarden'
+        name: fedora:39
+        namespace: library
   triggers:
-    - type: ImageChange
-      imageChange:
-        from:
-          kind: ImageStreamTag
-          namespace: alyssa
-          name: 'nodejs-18:latest'
-    - type: ConfigChange
-  runPolicy: Serial
+  - imageChange:
+      from:
+        kind: ImageStreamTag
+        name: fedora:39
+        namespace: library
