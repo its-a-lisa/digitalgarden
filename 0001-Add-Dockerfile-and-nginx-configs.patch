@@ -1,0 +1,119 @@
+From ba5f7a529f66179d1069d9316cf6ce825bfa56e2 Mon Sep 17 00:00:00 2001
+From: James Harmison <jharmison@gmail.com>
+Date: Tue, 2 Apr 2024 11:49:41 -0400
+Subject: [PATCH] Add Dockerfile and nginx configs
+
+---
+ Dockerfile                         | 25 +++++++++++++++++++
+ nginx/conf.d/tmp.conf              |  7 ++++++
+ nginx/default.d/digitalgarden.conf |  5 ++++
+ nginx/nginx.conf                   | 39 ++++++++++++++++++++++++++++++
+ 4 files changed, 76 insertions(+)
+ create mode 100644 Dockerfile
+ create mode 100644 nginx/conf.d/tmp.conf
+ create mode 100644 nginx/default.d/digitalgarden.conf
+ create mode 100644 nginx/nginx.conf
+
+diff --git a/Dockerfile b/Dockerfile
+new file mode 100644
+index 0000000..609c4ed
+--- /dev/null
++++ b/Dockerfile
+@@ -0,0 +1,25 @@
++FROM quay.io/fedora/nodejs-20:latest as builder
++
++USER 0
++
++WORKDIR /app
++
++COPY package*.json ./
++RUN npm install
++COPY . .
++RUN npm run build && \
++  chmod -R u=rwX,g=rX,o=rX dist
++
++FROM registry.fedoraproject.org/fedora:39
++
++RUN dnf -y install nginx && \
++  dnf clean all
++
++COPY --from=builder /app/dist /app
++COPY nginx /etc/nginx
++
++USER 1001
++EXPOSE 8080
++
++ENTRYPOINT ["/usr/sbin/nginx"]
++CMD ["-g", "daemon off;"]
+diff --git a/nginx/conf.d/tmp.conf b/nginx/conf.d/tmp.conf
+new file mode 100644
+index 0000000..17d6cdc
+--- /dev/null
++++ b/nginx/conf.d/tmp.conf
+@@ -0,0 +1,7 @@
++client_body_temp_path   /tmp/client_temp;
++proxy_temp_path         /tmp/proxy_temp_path;
++fastcgi_temp_path       /tmp/fastcgi_temp;
++uwsgi_temp_path         /tmp/uwsgi_temp;
++scgi_temp_path          /tmp/scgi_temp;
++access_log              /dev/stdout;
++error_log               /dev/stderr info;
+diff --git a/nginx/default.d/digitalgarden.conf b/nginx/default.d/digitalgarden.conf
+new file mode 100644
+index 0000000..c9ee47e
+--- /dev/null
++++ b/nginx/default.d/digitalgarden.conf
+@@ -0,0 +1,5 @@
++charset UTF-8;
++location / {
++    index index.html
++    try_files $uri $uri/ =404;
++}
+diff --git a/nginx/nginx.conf b/nginx/nginx.conf
+new file mode 100644
+index 0000000..47f1cb0
+--- /dev/null
++++ b/nginx/nginx.conf
+@@ -0,0 +1,39 @@
++worker_processes auto;
++error_log /dev/stderr notice;
++pid /tmp/nginx.pid;
++
++# Load dynamic modules. See /usr/share/doc/nginx/README.dynamic.
++include /usr/share/nginx/modules/*.conf;
++
++events {
++    worker_connections 1024;
++}
++
++http {
++    log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
++                      '$status $body_bytes_sent "$http_referer" '
++                      '"$http_user_agent" "$http_x_forwarded_for"';
++
++    sendfile            on;
++    tcp_nopush          on;
++    keepalive_timeout   65;
++    types_hash_max_size 4096;
++
++    include             /etc/nginx/mime.types;
++    default_type        application/octet-stream;
++
++    # Load modular configuration files from the /etc/nginx/conf.d directory.
++    # See http://nginx.org/en/docs/ngx_core_module.html#include
++    # for more information.
++    include /etc/nginx/conf.d/*.conf;
++
++    server {
++        listen       8080;
++        listen       [::]:8080;
++        server_name  _;
++        root         /app;
++
++        # Load configuration files for the default server block.
++        include /etc/nginx/default.d/*.conf;
++    }
++}
+-- 
+2.44.0
+

@@ -1,17 +1,17 @@
 kind: BuildConfig
 apiVersion: build.openshift.io/v1
 metadata:
-  name: digitalgarden
+  name: its-a-lisa-site
   namespace: alyssa
   labels:
-    app: digitalgarden
+    app: its-a-lisa-site
     app.openshift.io/runtime: nodejs
-    app.openshift.io/runtime-version: "18"
+    app.openshift.io/runtime-version: "20"
 spec:
   output:
     to:
       kind: ImageStreamTag
-      name: 'digitalgarden:latest'
+      name: 'its-a-lisa-site:latest'
   successfulBuildsHistoryLimit: 5
   failedBuildsHistoryLimit: 5
   strategy:
@@ -20,17 +20,17 @@ spec:
       from:
         kind: ImageStreamTag
         namespace: alyssa
-        name: 'nodejs-18:latest'
+        name: 'nodejs-20:latest'
   source:
     type: Git
     git:
-      uri: 'https://github.com/its-a-lisa/digitalgarden'
+      uri: 'https://github.com/its-a-lisa/its-a-lisa-site'
   triggers:
     - type: ImageChange
       imageChange:
         from:
           kind: ImageStreamTag
           namespace: alyssa
-          name: 'nodejs-18:latest'
+          name: 'nodejs-20:latest'
     - type: ConfigChange
   runPolicy: Serial
