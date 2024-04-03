@@ -8,17 +8,17 @@ metadata:
 spec:
   ingressClassName: nginx
   tls:
-  - hosts:
-    - notes.dev.its-a-lisa.com
-    secretName: digitalgarden-dev-cert
+    - hosts:
+        - notes.dev.its-a-lisa.com
+      secretName: digitalgarden-dev-cert
   rules:
-  - host: notes.dev.its-a-lisa.com
-    http:
-      paths:
-      - path: /_site
-        pathType: Prefix
-        backend:
-          service:
-            name: digitalgarden-dev
-            port:
-              number: 8080
+    - host: notes.dev.its-a-lisa.com
+      http:
+        paths:
+          - path: /_site
+            pathType: Prefix
+            backend:
+              service:
+                name: digitalgarden:dev
+                port:
+                  number: 8080
