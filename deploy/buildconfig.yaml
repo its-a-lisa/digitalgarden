@@ -22,9 +22,20 @@ spec:
         kind: ImageStreamTag
         name: fedora:39
         namespace: library
-  triggers:
-  - imageChange:
-      from:
-        kind: ImageStreamTag
-        name: fedora:39
-        namespace: library
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/its-a-lisa/digitalgarden-site'
+    triggers:
+      - type: Generic
+        generic:
+          secretReference:
+            name: digitalgarden-github
+      - type: ImageChange
+        imageChange:
+          from:
+            kind: ImageStreamTag
+            namespace: alyssa
+            name: 'fedora:39'
+      - type: ConfigChange
+    runPolicy: Serial
