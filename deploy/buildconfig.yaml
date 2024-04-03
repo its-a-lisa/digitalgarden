@@ -5,8 +5,8 @@ metadata:
   namespace: alyssa
   labels:
     app: digitalgarden
-    app.openshift.io/runtime: nodejs
-    app.openshift.io/runtime-version: "18"
+    app.openshift.io/runtime: fedora
+    app.openshift.io/runtime-version: "39"
 spec:
   output:
     to:
