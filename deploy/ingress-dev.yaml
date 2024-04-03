@@ -15,7 +15,7 @@ spec:
   - host: notes.dev.its-a-lisa.com
     http:
       paths:
-      - path: _site
+      - path: /_site
         pathType: Prefix
         backend:
           service:
