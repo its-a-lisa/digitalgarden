@@ -14,6 +14,10 @@ spec:
       name: 'digitalgarden:latest'
   successfulBuildsHistoryLimit: 5
   failedBuildsHistoryLimit: 5
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/its-a-lisa/digitalgarden'
   strategy:
     type: Docker
     dockerStrategy:
@@ -22,20 +26,16 @@ spec:
         kind: ImageStreamTag
         name: fedora:39
         namespace: library
-  source:
-    type: Git
-    git:
-      uri: 'https://github.com/its-a-lisa/digitalgarden'
-    triggers:
-      - type: Generic
-        generic:
-          secretReference:
-            name: digitalgarden-github
-      - type: ImageChange
-        imageChange:
-          from:
-            kind: ImageStreamTag
-            namespace: alyssa
-            name: 'fedora:39'
-      - type: ConfigChange
-    runPolicy: Serial
+  triggers:
+    - type: Generic
+      generic:
+        secretReference:
+          name: digitalgarden-github
+    - type: ImageChange
+      imageChange:
+        from:
+          kind: ImageStreamTag
+          namespace: alyssa
+          name: 'fedora:39'
+    - type: ConfigChange
+  runPolicy: Serial
