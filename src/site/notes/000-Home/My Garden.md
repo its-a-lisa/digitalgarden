@@ -1,5 +1,5 @@
 ---
-{"dg-publish":true,"dg-home":true,"permalink":"/000-Home/My Garden/","tags":["gardenEntry"],"dgPassFrontmatter":true,"noteIcon":""}
+{"dg-publish":true,"dg-home":true,"permalink":"/000-home/my-garden/","tags":["gardenEntry"],"dgPassFrontmatter":true,"noteIcon":""}
 ---
 
 Welcome to a virtual visualization of who I am. I hope to make this a vibrant space where I share a good portion of my [[001-Notes/braindump\|braindump]] that I am putting together locally on [[001-Notes/Obsidian\|Obsidian]] out on to the world wide web. I am attempting to adopt the [[001-Notes/digital garden\|digital garden]] format where I can nurture my [[001-Notes/obsessive research\|obsessive research]] compulsion with joy rather than trepidation. This is the place where I will cultivate ideas that will start as sapling and become evergreen once they're fully mature. I got the original idea to create the garden from [[Maggie Appleton\|Maggie Appleton]] and the growth framework from [[Utsob Roy\|Utsob Roy]]. 
