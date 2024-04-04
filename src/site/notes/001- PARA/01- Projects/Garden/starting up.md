@@ -90,16 +90,3 @@ For me, getting a good feel means that I need to follow my flow which consists o
 { #b4beb0}
 
 
-
-# To Do
-- [x] Figure out how to add in dates into ✅ 2023-09-26
-- [ ] Figure out how pages for newly created backlinks can get put into a specific folder
-- [ ] Figure out a mechanism to categorize notes of specific things as they're getting written
-- [ ] For example, I'd like to do a dump of all of the videos I watched to help this journey, but there are two specific videos that stood out to me so I'd like for them to also stand out in the notes
-	- From reading [Building a Second Brain: The Definitive Introductory Guide](https://fortelabs.com/blog/basboverview/#:~:text=pull%20up%20my%20%E2%80%9C-,Inbox,-%E2%80%9D%20%E2%80%93%20a%20separate%20folder) I expect this is going to get done using the 'inbox' method
-- [ ] Figure out how to link to different sections within the document
-	- I looked this up and the [documentation](https://help.obsidian.md/Linking+notes+and+files/Internal+links#Link+to+a+heading+in+a+note) gave a good explanation so if I wanted to link to the [[001- PARA/01- Projects/Garden/starting up#Ideas\|#Ideas]] section I would write `[[#Ideas]]` whereas writing `[[Ideas]]` would take me to  [[ideas\|ideas]] 
-- [ ] Set up a styling, modal, etc something that helps create hypothesis that is different and outside of to-do tasks, but kind of works the same way
-- [ ] Figure out how to make references
-- [ ] Get good at formatting 
-
