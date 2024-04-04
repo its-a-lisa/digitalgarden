@@ -2,6 +2,7 @@
 {"dg-publish":true,"dg-permalink":"confidentiality-levels","permalink":"/confidentiality-levels/","dgPassFrontmatter":true,"noteIcon":""}
 ---
 
+
 I am trying to commit to working in the public, so I'm trialing  confidentiality labels within the properties of the file in order to better support this effort. This is still a work in progress. 
 I am going to start with  [[003- PARA/01- Projects/Garden/confidentiality levels\|confidentiality levels]] that are found in the [[001-Notes/GitLab  Handbook\|GitLab  Handbook]] as a jumping off point. 
 
