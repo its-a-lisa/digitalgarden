@@ -5,39 +5,6 @@
 
 
 
-# Hypothesis
-- I wonder if setting up templates will help with flow 
-# Annoyances
-- [x] Not having templates ✅ 2023-09-26
-	-  Fixed: got templates
-- [x] Pages not getting automatically organized ✅ 2023-09-26
-	- Not sure what this meant at the time, but it doesn't resonate now that I took a break and came back
-- [x] I don't like the indentation ✅ 2023-09-26
-	- I hate the indentation less now that I stepped away and I'm not trying to perfect it all
-- [x] I don't know why some bullets have a purple orb icon next to them ✅ 2023-09-27
-	- Something I did made them go away; pretty sure it was related to some indentation or outline feature
-	- OK, figured it out; it is when foldable text is folded
-- [x] I don't like that the different level of headings aren't different colors ✅ 2023-09-27
-	- Now that I applied the [[gummy\|gummy]] [[theme\|theme]] that made the headings different formats from each other; I'm ok that they aren't different colors
-	- I don't want to have to put text in a heading, but I want to be able to collapse 
-- [x] Not having started from the beginning ✅ 2023-09-27
-	- Ok, after reading [Building a Second Brain: The Definitive Introductory Guide](https://fortelabs.com/blog/basboverview/#:~:text=START%20WITH%20A%20CLEAN%20SLATE%C2%A0) I feel less annoyed about this based on the part [[starting with a clean slate\|starting with a clean slate]]
-- [x] Feeling like I'm starting out wrong and doing the wrong flow of things as it relates to the formatting and headings ✅ 2023-09-27
-	- Now that I'm on day two and getting into the flow and I'm updating the headlines and formate for templates of things as I'm going to be better suited and tailored to me, I can see that not having it from the beginning is OK and will evolve over time
-- [ ] Not having a quick way to change the letter casing and putting multiple things in CamelCase or Sentence case at once based on the heading level
-- [ ] Wanting to get ahead of myself and already have sync and publish set up
-
-# Curiosities
-- [ ] how do other people structure their notes; do they use folders or let their notes just roam in the top level
-	- [ ] Rather, how do I want to do it; I think after percolating on this a bit, I'm most likely going to do it by creating high docs; this is probably where the 'evergreen' thing comes from. 
-# Learnings
-- As I was trying to set this up, I realized that [[cloudflare cloud\|cloudflare cloud]] is a heftier setup than I realized
-- Most of the gardens are deployed with [[001-Notes/Hugo\|Hugo]] or [[001-Notes/Jekyll\|Jekyll]]
-# Ideas
-- I'd like a way to have a list of actions and then only undo certain actions
-# Lost Sock
-- [x] I had a link for ChatGPT and Obsidian that I lost somewhere -- found it! https://dg-docs.ole.dev/ ✅ 2023-09-26
-{ #b4beb0}
 
 # To Do
 - [x] Figure out how to add in dates into ✅ 2023-09-26
