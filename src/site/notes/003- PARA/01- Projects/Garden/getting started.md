@@ -4,12 +4,7 @@
 
 
 
-# Observation
-- When I started going back and trying to correct formatting and doing arrangement of things, that is when the flow of ideas stopped and got impeded
-- The more I started to use an 'outline' way of doing things, the more things stopped working seamlessly and it was 
-- In some ways, I like collapsing items, but in other ways, I don't and feel like it is starting to feel too formal by me doing it
-- I'm hoping in the future that I can use this in a way that i'm going forward at all times and not trying to go backwards to capture something that I had done before and making sure they get documented
-- I think what I like about the idea of this activity is that it'll keep me centered. I hav ea tendency to open up a lot of different tabs and go down rabbit holes. This will act as both a central hub and a focal points so that I have the freedom to let my mind wander, but then, if I stray too far or if I lose my way, I have a place to come back to. I think by the expectation that I'm going to be taking notes as I go along the way and the notes don't have to be perfect and they can be a stream of thoughts will be helpful so that I'll actually do them. 
+
 # Hypothesis
 - I wonder if setting up templates will help with flow 
 # Annoyances
